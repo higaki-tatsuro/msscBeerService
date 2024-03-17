@@ -65,7 +65,7 @@ public class BeerServiceImpl implements BeerService {
         Page<Beer> beerPage;
 
         if(!StringUtils.isEmpty(beerName) && !StringUtils.isEmpty(beerStyle.name())){
-            beerPage = this.beerRepository.finaAllByBeerNameAndBeerStyle(beerName, beerStyle, pageRequest);
+            beerPage = this.beerRepository.findAllByBeerNameAndBeerStyle(beerName, beerStyle, pageRequest);
         }else if(!StringUtils.isEmpty(beerName) && StringUtils.isEmpty(beerStyle.name())){
             beerPage = this.beerRepository.findAllByBeerName(beerName, pageRequest);
         }else if(StringUtils.isEmpty(beerName) && !StringUtils.isEmpty(beerStyle.name())){
