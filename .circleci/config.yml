@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # specify version
-      - image: circleci/openjdk:17.0-jdk-buster-browsers
+      - image: circleci/openjdk:11-jdk-buster-browsers-legacy
 
     working_directory: ~/repo
 
