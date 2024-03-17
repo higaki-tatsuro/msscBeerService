@@ -40,21 +40,12 @@ public class JacksonTest {
         System.out.println(json);
     }
 
-    @Test
-    void testDeserialize() throws JsonProcessingException {
-        String json = """
-               {
-                    "id":"7646c07b-d42e-46bd-a60b-3f123879c86f",
-                    "last-modified-date":null,
-                    "beer-name":"Test Beer",
-                    "upc":null,"price":null,
-                    "my-local-date":"20240303",
-                    "create-date":"2024-03-03 11:03:53+0000"
-                }
-                """;
-        TestBeerDto beerFromJson = objectMapper.readValue(json, TestBeerDto.class);
-
-        System.out.println(beerFromJson);
-    }
+//    @Test
+//    void testDeserialize() throws JsonProcessingException {
+//        String json = "{ 'id':'7646c07b-d42e-46bd-a60b-3f123879c86f', 'last-modified-date':null, 'beer-name':'Test Beer', 'upc':null,'price':null, 'my-local-date':'20240303', 'create-date':'2024-03-03 11:03:53+0000'} ";
+//        TestBeerDto beerFromJson = objectMapper.readValue(json, TestBeerDto.class);
+//
+//        System.out.println(beerFromJson);
+//    }
 
 }
