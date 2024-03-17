@@ -94,7 +94,7 @@ class BeerControllerTest {
 
         mockMvc.perform(post("/api/v1/beer/").contentType(MediaType.APPLICATION_JSON).content(beerDtoJson))
                 .andExpect(status().isCreated())
-                .andDo(document("/v1/beer-post",
+                .andDo(document("v1/beer-post",
                             requestFields(
                                     fields.withPath("id").ignored(),
                                     fields.withPath("version").ignored(),
