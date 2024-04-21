@@ -18,7 +18,7 @@ public class DateMapper {
         LocalDateTime ldt = ts.toLocalDateTime();
 
         return OffsetDateTime.of(ldt.getYear(), ldt.getMonthValue(), ldt.getDayOfMonth(), ldt.getHour(),ldt.getMinute(),
-                ldt.getSecond(), ldt.getNano(), ZoneOffset.of("Asia/Tokyo"));
+                ldt.getSecond(), ldt.getNano(), ZoneOffset.of("+09:00"));
     }
 
     public Timestamp asTimestamp(OffsetDateTime offsetDateTime){
@@ -26,7 +26,7 @@ public class DateMapper {
             return null;
         }
 
-        return Timestamp.valueOf(offsetDateTime.atZoneSameInstant(ZoneOffset.of("Asia/Tokyo")).toLocalDateTime());
+        return Timestamp.valueOf(offsetDateTime.atZoneSameInstant(ZoneOffset.of("+09:00")).toLocalDateTime());
     }
 
 }

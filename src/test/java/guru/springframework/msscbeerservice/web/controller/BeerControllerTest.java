@@ -1,11 +1,9 @@
 package guru.springframework.msscbeerservice.web.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import guru.springframework.msscbeerservice.bootstrap.BeerLoader;
 import guru.springframework.msscbeerservice.services.BeerService;
-import guru.springframework.msscbeerservice.web.model.BeerDto;
-import guru.springframework.msscbeerservice.web.model.BeerStyleEnum;
+import guru.sfg.brewery.model.BeerDto;
+import guru.sfg.brewery.model.BeerStyleEnum;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +34,6 @@ import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuild
 
 import static org.mockito.Mockito.when;
 
-import static org.junit.jupiter.api.Assertions.*;
 @AutoConfigureRestDocs(uriScheme = "https", uriHost = "dev.springframework.guru", uriPort = 80)
 @ExtendWith(RestDocumentationExtension.class)
 @WebMvcTest(BeerController.class)
@@ -58,7 +55,8 @@ class BeerControllerTest {
                 .beerName("My Beer")
                 .beerStyle(BeerStyleEnum.ALE)
                 .price(new BigDecimal("2.99"))
-                .upc(BeerLoader.BEER_1_UPC)
+                // TODO
+                .upc("0631234100036")
                 .build();
     }
 

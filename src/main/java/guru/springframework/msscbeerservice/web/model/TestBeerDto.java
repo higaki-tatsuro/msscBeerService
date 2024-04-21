@@ -7,6 +7,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Positive;
+
+import guru.sfg.brewery.model.BeerStyleEnum;
 import lombok.*;
 
 import java.math.BigDecimal;
