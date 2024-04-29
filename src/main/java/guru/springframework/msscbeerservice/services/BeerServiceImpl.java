@@ -13,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -64,11 +65,11 @@ public class BeerServiceImpl implements BeerService {
         BeerPagedList beerPagedList;
         Page<Beer> beerPage;
 
-        if(!StringUtils.isEmpty(beerName) && !StringUtils.isEmpty(beerStyle.name())){
+        if(!StringUtils.isEmpty(beerName) && !Objects.isNull(beerStyle)){
             beerPage = this.beerRepository.findAllByBeerNameAndBeerStyle(beerName, beerStyle, pageRequest);
-        }else if(!StringUtils.isEmpty(beerName) && StringUtils.isEmpty(beerStyle.name())){
+        }else if(!StringUtils.isEmpty(beerName) && Objects.isNull((beerStyle))){
             beerPage = this.beerRepository.findAllByBeerName(beerName, pageRequest);
-        }else if(StringUtils.isEmpty(beerName) && !StringUtils.isEmpty(beerStyle.name())){
+        }else if(StringUtils.isEmpty(beerName) && !Objects.isNull((beerStyle))){
             beerPage = this.beerRepository.findAllByBeerStyle(beerName, pageRequest);
         }else{
             beerPage = this.beerRepository.findAll(pageRequest);
